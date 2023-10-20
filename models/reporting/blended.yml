@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: s3_raw
+    schema: s3_raw
+    tables:
+      - name: bookings_raw
+        identifier: bookings_raw
