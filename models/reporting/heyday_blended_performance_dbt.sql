@@ -1,6 +1,7 @@
 SELECT 'Facebook - Prospecting' as channel, date, date_granularity, store_type, market, 
-        COALESCE(SUM(spend),0) as spend, COALESCE(SUM(spend),0) as pros_spend, COALESCE(SUM(link_clicks),0) as clicks, COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, COALESCE(SUM(purchases),0) as pros_purchases, COALESCE(SUM(bookings),0) as paid_bookings, 
-        0 as bookings, 0 as new_bookings
+        COALESCE(SUM(spend),0) as spend, COALESCE(SUM(spend),0) as pros_spend, COALESCE(SUM(link_clicks),0) as clicks, 
+        COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, COALESCE(SUM(purchases),0) as pros_purchases, 
+        COALESCE(SUM(bookings),0) as paid_bookings, 0 as bookings, 0 as new_bookings
     FROM {{ source('reporting','heyday_facebook_ad_performance') }}
     WHERE campaign_type_default ~* 'Prospecting'
     GROUP BY 1,2,3,4,5
@@ -8,7 +9,8 @@ SELECT 'Facebook - Prospecting' as channel, date, date_granularity, store_type, 
     UNION ALL
     
     SELECT 'Facebook - Retargeting' as channel, date, date_granularity, store_type, market, 
-        COALESCE(SUM(spend),0) as spend, 0 as pros_spend, COALESCE(SUM(link_clicks),0) as clicks, COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, 0 as pros_purchases, COALESCE(SUM(bookings),0) as paid_bookings, 
+        COALESCE(SUM(spend),0) as spend, 0 as pros_spend, COALESCE(SUM(link_clicks),0) as clicks, COALESCE(SUM(impressions),0) as impressions, 
+        COALESCE(SUM(purchases),0) as purchases, 0 as pros_purchases, COALESCE(SUM(bookings),0) as paid_bookings, 
         0 as bookings, 0 as new_bookings
     FROM {{ source('reporting','heyday_facebook_ad_performance') }}
     WHERE campaign_type_default ~* 'Retargeting'
@@ -17,8 +19,9 @@ SELECT 'Facebook - Prospecting' as channel, date, date_granularity, store_type, 
     UNION ALL
     
     SELECT 'Google - Branded' as channel, date, date_granularity, store_type, market, 
-        COALESCE(SUM(spend),0) as spend, COALESCE(SUM(spend),0) as pros_spend, COALESCE(SUM(clicks),0) as clicks, COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, COALESCE(SUM(purchases),0) as pros_purchases, COALESCE(SUM(bookings),0) as paid_bookings, 
-        0 as bookings, 0 as new_bookings
+        COALESCE(SUM(spend),0) as spend, COALESCE(SUM(spend),0) as pros_spend, COALESCE(SUM(clicks),0) as clicks, 
+        COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, COALESCE(SUM(purchases),0) as pros_purchases, 
+        COALESCE(SUM(bookings),0) as paid_bookings, 0 as bookings, 0 as new_bookings
     FROM {{ source('reporting','heyday_googleads_campaign_performance') }}
     WHERE campaign_type_default ~* 'Search Branded'
     GROUP BY 1,2,3,4,5
@@ -26,7 +29,8 @@ SELECT 'Facebook - Prospecting' as channel, date, date_granularity, store_type, 
     UNION ALL
     
     SELECT 'Google - Nonbrand' as channel, date, date_granularity, store_type, market, 
-        COALESCE(SUM(spend),0) as spend, 0 as pros_spend, COALESCE(SUM(clicks),0) as clicks, COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, 0 as pros_purchases, COALESCE(SUM(bookings),0) as paid_bookings, 
+        COALESCE(SUM(spend),0) as spend, 0 as pros_spend, COALESCE(SUM(clicks),0) as clicks, COALESCE(SUM(impressions),0) as impressions, 
+        COALESCE(SUM(purchases),0) as purchases, 0 as pros_purchases, COALESCE(SUM(bookings),0) as paid_bookings, 
         0 as bookings, 0 as new_bookings
     FROM {{ source('reporting','heyday_googleads_campaign_performance') }}
     WHERE campaign_type_default ~* 'Search Nonbrand'
@@ -35,8 +39,9 @@ SELECT 'Facebook - Prospecting' as channel, date, date_granularity, store_type, 
     UNION ALL
     
     SELECT 'TikTok - Prospecting' as channel, date, date_granularity, store_type, market, 
-        COALESCE(SUM(spend),0) as spend, COALESCE(SUM(spend),0) as pros_spend, COALESCE(SUM(clicks),0) as clicks, COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, COALESCE(SUM(purchases),0) as pros_purchases, COALESCE(SUM(bookings),0) as paid_bookings, 
-        0 as bookings, 0 as new_bookings
+        COALESCE(SUM(spend),0) as spend, COALESCE(SUM(spend),0) as pros_spend, COALESCE(SUM(clicks),0) as clicks, 
+        COALESCE(SUM(impressions),0) as impressions, COALESCE(SUM(purchases),0) as purchases, COALESCE(SUM(purchases),0) as pros_purchases, 
+        COALESCE(SUM(bookings),0) as paid_bookings, 0 as bookings, 0 as new_bookings
     FROM {{ source('reporting','heyday_tiktok_ad_performance') }}
     GROUP BY 1,2,3,4,5
     
