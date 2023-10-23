@@ -19,7 +19,7 @@
         location_name,
         client_type,
         COALESCE(SUM(appointments),0) as bookings
-    FROM {{ source ('reporting','heyday_s3_bookings') }}
+    FROM {{ ref('s3_bookings') }}
     GROUP BY 1,2,3,4,5,6
 
 UNION ALL
@@ -45,7 +45,7 @@ UNION ALL
         location_name,
         client_type,
         COALESCE(SUM(appointments),0) as bookings
-    FROM {{ source ('reporting','heyday_s3_bookings') }}
+    FROM {{ ref('s3_bookings') }}
     GROUP BY 1,2,3,4,5,6
 
 UNION ALL
@@ -71,7 +71,7 @@ UNION ALL
         location_name,
         client_type,
         COALESCE(SUM(appointments),0) as bookings
-    FROM {{ source ('reporting','heyday_s3_bookings') }}
+    FROM {{ ref('s3_bookings') }}
     GROUP BY 1,2,3,4,5,6
     
 UNION ALL
@@ -97,7 +97,7 @@ UNION ALL
         location_name,
         client_type,
         COALESCE(SUM(appointments),0) as bookings
-    FROM {{ source ('reporting','heyday_s3_bookings') }}
+    FROM {{ ref('s3_bookings') }}
     GROUP BY 1,2,3,4,5,6
     
 UNION ALL
@@ -123,5 +123,5 @@ UNION ALL
         location_name,
         client_type,
         COALESCE(SUM(appointments),0) as bookings
-    FROM {{ source ('reporting','heyday_s3_bookings') }}
+    FROM {{ ref('s3_bookings') }}
     GROUP BY 1,2,3,4,5,6
