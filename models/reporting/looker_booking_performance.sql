@@ -1,4 +1,8 @@
-  SELECT DATE_TRUNC('day',created_date::date) as date, 'day' as date_granularity,
+{{ config (
+    alias = target.database + '_looker_booking_performance'
+)}}
+
+SELECT DATE_TRUNC('day',created_date::date) as date, 'day' as date_granularity,
         CASE WHEN location_name ~* ('19th St|Nomad|Noho|Tribeca|UES|Upper East Side|UWS|Upper West Side|Silver Lake|Playa Vista|Beverly|Manhattan Beach|Rittenhouse|Lincoln Plaza|Midtown|Krog District|Buckhead|Perimeter|Bethesda Row|14th St|Old Town Alexandria|Preston Hollow|Knox Henderson') 
             THEN 'Heyday Owned'
             WHEN location_name ~* ('Ann Arbor|Santan Village|Seaport|Lincoln Park|Lowry|Tennyson|University Hills|River Oaks|Plymouth Meeting') THEN 'Franchise'
