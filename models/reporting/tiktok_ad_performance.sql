@@ -30,4 +30,4 @@ clicks,
 complete_payment_events as purchases,
 complete_payment_value as revenue,
 conversions as bookings
-FROM {{ ref('reporting','tiktok_performance_by_ad') }}
+FROM {{ ref('tiktok_performance_by_ad') }}
