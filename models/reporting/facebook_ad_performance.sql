@@ -1,5 +1,5 @@
 {{ config (
-    alias = target.database + '_faceboook_ad_performance'
+    alias = target.database + '_facebook_ad_performance'
 )}}
   
 SELECT 
