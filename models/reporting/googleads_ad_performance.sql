@@ -36,4 +36,4 @@ clicks,
 conversions as purchases,
 conversions_value as revenue,
 heydayga4webfacial_booking as bookings
-FROM {{ ref('reporting','googleads_performance_by_ad') }}
+FROM {{ ref('googleads_performance_by_ad') }}
