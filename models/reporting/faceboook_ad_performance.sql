@@ -45,4 +45,4 @@ add_to_cart,
 purchases,
 revenue,
 "offsite_conversion.custom.1549904315410411" as bookings
-FROM {{ ref('reporting','facebook_performance_by_ad') }}
+FROM {{ ref('facebook_performance_by_ad') }}
