@@ -37,4 +37,4 @@ search_impression_share,
 search_budget_lost_impression_share,
 search_rank_lost_impression_share,
 heydayga4webfacial_booking as bookings
-FROM {{ ref('reporting','heyday_googleads_performance_by_campaign') }}
+FROM {{ ref('reporting','googleads_performance_by_campaign') }}
