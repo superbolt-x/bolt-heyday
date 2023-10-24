@@ -24,7 +24,7 @@
         client_type,
         COALESCE(SUM(appointments),0) as bookings
     FROM {{ ref('s3_bookings') }}
-    GROUP BY 1,2,3,4,5,6)
+    GROUP BY 1,2,3,4,5,6
 
 UNION ALL
 
