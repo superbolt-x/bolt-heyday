@@ -24,6 +24,7 @@ CASE WHEN campaign_name ~* 'Chicago' OR campaign_name ~* 'LincolnPark' OR campai
     WHEN campaign_name ~* 'Dallas' THEN 'Dallas'
     WHEN campaign_name ~* 'Houston' OR campaign_name ~* 'RiverOaks' OR campaign_name ~* 'River Oaks' THEN 'Houston'
     WHEN campaign_name ~* 'AnnArbor' OR campaign_name ~* 'Ann Arbor' THEN 'Ann Arbor'
+    WHEN campaign_name ~* 'Plano' OR campaign_name ~* 'DFW' THEN 'Plano'
 END as market,
 adset_name,
 adset_id,
