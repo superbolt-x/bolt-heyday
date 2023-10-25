@@ -19,6 +19,7 @@
             WHEN location_name ~* ('Lincoln Park') THEN 'Chicago'
             WHEN location_name ~* ('Lowry|Tennyson|University Hills') THEN 'Denver'
             WHEN location_name ~* ('River Oaks') THEN 'Houston'
+            WHEN location_name ~* ('Legacy West') THEN 'Plano'
         END as market,
         location_name,
         client_type,
