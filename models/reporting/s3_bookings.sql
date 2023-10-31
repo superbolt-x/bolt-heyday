@@ -19,8 +19,8 @@ group by appointment_id)
     appointment_date,
     "count" as appointments,
     bookings_raw.appointment_id as unique_key
-from {{ source('s3_raw','bookings_raw') }}
-left join last_record_date 
+from last_record_date
+left join {{ source('s3_raw','bookings_raw') }} 
 on bookings_raw._fivetran_synced = last_record_date.last_synced_date
 and bookings_raw.appointment_id = last_record_date.appointment_id)
 
