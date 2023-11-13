@@ -15,7 +15,7 @@ END as campaign_type_default,
 CASE WHEN campaign_name ~* 'Chicago' OR campaign_name ~* 'LincolnPark' OR campaign_name ~* 'Lincoln Park' THEN 'Chicago'
     WHEN campaign_name ~* 'Denver' THEN 'Denver'
     WHEN campaign_name ~* 'NYC' THEN 'NYC'
-    WHEN campaign_name ~* 'LA' OR campaign_name ~* 'PlayaVista' OR campaign_name ~* 'Playa Vista' OR campaign_name ~* 'Manhattan Beach' OR campaign_name ~* 'ManhattanBeach'THEN 'LA'
+    WHEN campaign_name ~* ' LA' OR campaign_name ~* '_LA' OR campaign_name ~* 'PlayaVista' OR campaign_name ~* 'Playa Vista' OR campaign_name ~* 'Manhattan Beach' OR campaign_name ~* 'ManhattanBeach'THEN 'LA'
     WHEN campaign_name ~* 'PHL' OR campaign_name ~* 'PlymouthMeeting' OR campaign_name ~* 'Plymouth Meeting' OR campaign_name ~* 'Rittenhouse' THEN 'PHL'
     WHEN campaign_name ~* 'Boston' OR campaign_name ~* 'Seaport' THEN 'Boston'
     WHEN campaign_name ~* 'AZ' OR campaign_name ~* 'San Tan' OR campaign_name ~* 'SanTan' OR campaign_name ~* 'Lincoln Plaza' OR campaign_name ~* 'LincolnPlaza' THEN 'AZ'
