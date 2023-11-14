@@ -22,10 +22,10 @@ CASE WHEN campaign_name ~* 'Chicago' OR campaign_name ~* 'LincolnPark' OR campai
     WHEN campaign_name ~* 'AZ' OR campaign_name ~* 'San Tan' OR campaign_name ~* 'SanTan' OR campaign_name ~* 'Lincoln Plaza' OR campaign_name ~* 'LincolnPlaza' THEN 'AZ'
     WHEN campaign_name ~* 'ATL' OR campaign_name ~* 'Atlanta' THEN 'ATL'
     WHEN campaign_name ~* 'DMV' OR campaign_name ~* 'Bethesda' OR campaign_name ~* 'Alexandria' THEN 'DMV'
-    WHEN campaign_name ~* 'Dallas' THEN 'Dallas'
+    WHEN campaign_name ~* 'Dallas' OR campaign_name ~* 'DFW' THEN 'Dallas'
     WHEN campaign_name ~* 'Houston' OR campaign_name ~* 'RiverOaks' OR campaign_name ~* 'River Oaks' THEN 'Houston'
     WHEN campaign_name ~* 'AnnArbor' OR campaign_name ~* 'Ann Arbor' THEN 'Ann Arbor'
-    WHEN campaign_name ~* 'Plano' OR campaign_name ~* 'DFW' THEN 'Plano'
+    WHEN campaign_name ~* 'Plano' THEN 'Plano'
 END as market,
 ad_group_name,
 ad_group_id,
