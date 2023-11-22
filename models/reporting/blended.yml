@@ -6,3 +6,18 @@ sources:
     tables:
       - name: bookings_raw
         identifier: bookings_raw
+
+- name: reporting
+    schema: reporting
+    tables:
+      - name: facebook_ad_performance
+        identifier: heyday_facebook_ad_performance
+
+      - name: googleads_campaign_performance
+        identifier: heyday_googleads_campaign_performance
+
+      - name: tiktok_ad_performance
+        identifier: heyday_tiktok_ad_performance
+
+      - name: looker_booking_performance
+        identifier: heyday_looker_booking_performance
