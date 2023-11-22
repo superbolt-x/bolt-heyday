@@ -7,7 +7,7 @@ sources:
       - name: bookings_raw
         identifier: bookings_raw
 
-- name: reporting
+  - name: reporting
     schema: reporting
     tables:
       - name: facebook_ad_performance
