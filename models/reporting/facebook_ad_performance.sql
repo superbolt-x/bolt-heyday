@@ -17,14 +17,17 @@ CASE WHEN campaign_name ~* 'Chicago' OR campaign_name ~* 'LincolnPark' OR campai
     WHEN campaign_name ~* 'NYC' THEN 'NYC'
     WHEN campaign_name ~* ' LA' OR campaign_name ~* '_LA' OR campaign_name ~* 'PlayaVista' OR campaign_name ~* 'Playa Vista' OR campaign_name ~* 'Manhattan Beach' OR campaign_name ~* 'ManhattanBeach'THEN 'LA'
     WHEN campaign_name ~* 'PHL' OR campaign_name ~* 'PlymouthMeeting' OR campaign_name ~* 'Plymouth Meeting' OR campaign_name ~* 'Rittenhouse' THEN 'PHL'
-    WHEN campaign_name ~* 'Boston' OR campaign_name ~* 'Seaport' THEN 'Boston'
+    WHEN adset_name ~* 'Boston' THEN 'Boston'
     WHEN campaign_name ~* 'AZ' OR campaign_name ~* 'San Tan' OR campaign_name ~* 'SanTan' OR campaign_name ~* 'Lincoln Plaza' OR campaign_name ~* 'LincolnPlaza' THEN 'AZ'
     WHEN campaign_name ~* 'ATL' OR campaign_name ~* 'Atlanta' THEN 'ATL'
     WHEN campaign_name ~* 'DMV' OR campaign_name ~* 'Bethesda' OR campaign_name ~* 'Alexandria' THEN 'DMV'
     WHEN campaign_name ~* 'Dallas' OR campaign_name ~* 'DFW' THEN 'Dallas'
-    WHEN campaign_name ~* 'Houston' OR campaign_name ~* 'RiverOaks' OR campaign_name ~* 'River Oaks' THEN 'Houston'
+    WHEN adset_name ~* 'Houston' THEN 'Houston'
     WHEN campaign_name ~* 'AnnArbor' OR campaign_name ~* 'Ann Arbor' THEN 'Ann Arbor'
     WHEN campaign_name ~* 'Plano' THEN 'Plano'
+    WHEN campaign_name ~* 'East Cobb' THEN 'East Cobb'
+    WHEN adset_name ~* 'Bellaire' THEN 'Bellaire'
+    WHEN adset_name ~* 'Assembly Row' THEN 'Assembly Row'
 END as market,
 adset_name,
 adset_id,
