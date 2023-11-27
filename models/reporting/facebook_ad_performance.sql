@@ -4,7 +4,7 @@
   
 SELECT 
 CASE WHEN account_id = '620149775615288' THEN 'Franchise'
-    WHEN account_id = '10100119278651428' THEN 'Heyday Owned'
+    WHEN account_id = '10100119278651427' THEN 'Heyday Owned'
 END as store_type,
 campaign_name,
 campaign_id,
