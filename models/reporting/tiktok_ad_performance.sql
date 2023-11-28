@@ -3,8 +3,8 @@
 )}}
 
 SELECT 
-CASE WHEN adgroup_name IN ('TOF_PHL_Broad_18-54') THEN 'Franchise'
-    WHEN adgroup_name IN ('TOF_NYC_Broad_18-54','TOF_LA_Broad_18-54') THEN 'Heyday Owned'
+CASE WHEN adgroup_name ~* ('Plymouth Meeting') THEN 'Franchise'
+    WHEN adgroup_name ~* ('NYC|LA|Rittenhouse') THEN 'Heyday Owned'
 END as store_type,
 campaign_name,
 campaign_id,
@@ -12,7 +12,8 @@ campaign_status,
 campaign_type_default,
 CASE WHEN adgroup_name ~* 'NYC' THEN 'NYC'
     WHEN adgroup_name ~* 'LA' THEN 'LA'
-    WHEN adgroup_name ~* 'PHL' THEN 'PHL'
+    WHEN adgroup_name ~* 'Rittenhouse' THEN 'Rittenhouse'
+    WHEN adgroup_name ~* 'Plymouth Meeting' THEN 'Plymouth Meeting'
 END as market,
 adgroup_name,
 adgroup_id,
