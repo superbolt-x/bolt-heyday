@@ -34,6 +34,10 @@ vars:
 
 models:
   bolt_blueprint:
+    base:
+      +schema: base
+      +materialized: table
+      
     reporting:
       +schema: reporting
       +materialized: table
